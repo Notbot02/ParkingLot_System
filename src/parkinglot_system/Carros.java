@@ -11,6 +11,7 @@ package parkinglot_system;
 public class Carros {
     
     String placa, modelo, Vendedor;
+    
     int AnoFabri;
     double Valor_Compra, ValorVenda;
     boolean Dispo;
@@ -39,6 +40,22 @@ public class Carros {
     public double getValor_Compra() {
         return Valor_Compra;
     }
+    
+     public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setAnoFabri(int AnoFabri) {
+        this.AnoFabri = AnoFabri;
+    }
+
+    public void setValor_Compra(double Valor_Compra) {
+        this.Valor_Compra = Valor_Compra;
+    }
 
     public boolean isDispo() {
         return Dispo;
@@ -60,16 +77,8 @@ public class Carros {
     
     public boolean oferta(double valor)
     {
-        if(valor > (Valor_Compra*1.1))
-        {
-            
-            return true;
-        }
-        else
-        {
-            
-            return false;
-        }
+        return valor >= Valor_Compra*1.1;
+        
     }
     
     public boolean venderCarro(String vendedor, double ValorVenda)
